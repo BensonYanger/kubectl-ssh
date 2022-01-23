@@ -135,7 +135,6 @@ read -r -d '' OVERRIDES <<EOF || :
                 "restartPolicy": "Never",
                 "securityContext":
                 {
-                    "allowPrivilegeEscalation": true,
                     "privileged": true,
                     "runAsUser": 0
                 },
