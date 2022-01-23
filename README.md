@@ -13,23 +13,40 @@ After this pod is created, you will kubectl exec into this new pod. From here, y
 
 After exiting from the pod for any reason, the pod will be deleted.
 
----
-**NOTE**
+## NOTE
 
 This pod will be run with privileges and mounts volumes that the containerd runtime is actively using.
 
 **THIS CAN BE VERY DANGEROUS.** 
 
----
+## Prerequisites
 
-### kubectl ssh
+- [kubectl](https://kubernetes.io/docs/tasks/tools/)
+
+## Install
+
+- To use as a script: none needed
+- To use as a kubectl plugin: place this in any directory in your PATH (probably /usr/local/bin)
+
+## Script
 - This is basically a kubectl exec but it gives you the option to choose what user you want to be 
 
 Usage:
   ```./kubectl-ssh [OPTIONAL: -n <namespace>] [OPTIONAL: -u <user>] [OPTIONAL: -c <Container Name>] [REQUIRED: <PodName> ] -- [command]```
+  
+If installed as a plugin:
+  ```kubectl ssh [OPTIONAL: -n <namespace>] [OPTIONAL: -u <user>] [OPTIONAL: -c <Container Name>] [REQUIRED: <PodName> ] -- [command]```
+
+---
 
 Example:
   ```./kubectl-ssh -n challenges -u root challenge-5dbfc6b6b8-n8ckt -- /bin/bash```
+  
+If installed as a plugin:
+  ```kubectl ssh -n challenges -u root challenge-5dbfc6b6b8-n8ckt -- /bin/bash```
+
+---
+**Flags**
 
 Option | Required | Description
 ------------- | ------------- | -------------
