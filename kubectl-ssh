@@ -5,8 +5,8 @@ set -eu
 usage() {
   cat <<EOF
 
-Usage: kubectl ssh [OPTIONAL: -n <namespace>] [OPTIONAL: -u <user>] [OPTIONAL: -c <Container Name>] [OPTIONAL: -s <shell>] [ Pod Name ] -- [command]
-Example: kubectl ssh -n default -u root -c prometheus prometheus-282sd0s2 -- bash
+Usage: kubectl ssh [OPTIONAL: -n <namespace>] [OPTIONAL: -u <user>] [OPTIONAL: -c <Container Name>] [ Pod Name ] -- [command]
+Example: kubectl ssh -n challenges -u root challenge-5dbfc6b6b8-n8ckt -- /bin/bash
 
 Run a command in a running container
 
@@ -16,7 +16,6 @@ Options:
   -n  The namespace to use for this request. If not provided, defaults to current namespace.
   -u  Username or UID (format: <name|uid>[:<group|gid>]). If not provided, defaults to root.
   -c  Container name. If not provided, the first container in the pod will be chosen
-  -s  The shell to use. If not provided, the shell it executes is /bin/bash
 EOF
   exit 0
 }
@@ -35,7 +34,7 @@ to_json() {
 [ $# -eq 0 ] && usage
 
 KUBECTL="$(type -p kubectl)"
-COMMAND="/bin/bash"
+COMMAND="/bin/sh"
 USERNAME="root"
 CONTAINER="NONE"
 NAMESPACE="NONE"
