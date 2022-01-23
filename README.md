@@ -9,6 +9,10 @@ Creates a pod with the following:
 - volumes mounted: (`/var/run/containerd`, `/tmp`, `/var/lib/containerd`)
 - permissions: privileged
 
+After this pod is created, you will kubectl exec into this new pod. From here, you should have a shell into the container you requested.
+
+After exiting from the pod for any reason, the pod will be deleted.
+
 ---
 **NOTE**
 
