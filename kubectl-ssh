@@ -160,10 +160,6 @@ read -r -d '' OVERRIDES <<EOF || :
                         "name": "varlibcontainerd"
                     },
                     {
-                        "mountPath": "/var/log",
-                        "name": "varlog"
-                    },
-                    {
                         "mountPath": "/tmp",
                         "name": "temp"
                     }
@@ -186,12 +182,6 @@ read -r -d '' OVERRIDES <<EOF || :
                 "name": "varlibcontainerd",
                 "hostPath": {
                     "path": "/var/lib/containerd"
-                }
-            },
-            {
-                "name": "varlog",
-                "hostPath": {
-                    "path": "/var/log"
                 }
             },
             {
