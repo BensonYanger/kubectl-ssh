@@ -5,7 +5,7 @@ set -eu
 usage() {
   cat <<EOF
 
-Usage: kubectl ssh [OPTIONAL: -n <namespace>] [OPTIONAL: -u <user>] [OPTIONAL: -c <Container Name>] [ Pod Name ] -- [command]
+Usage: kubectl ssh [OPTIONAL: -n <namespace>] [OPTIONAL: -u <user>] [OPTIONAL: -c <Container Name>] [OPTIONAL: -s <shell>] [ Pod Name ] -- [command]
 Example: kubectl ssh -n default -u root -c prometheus prometheus-282sd0s2 -- bash
 
 Run a command in a running container
