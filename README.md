@@ -29,6 +29,22 @@ This pod will be run with privileges and mounts volumes that the containerd runt
 
 ## Install
 
+### Linux
+
+#### cURL
+```
+curl -L https://raw.githubusercontent.com/BensonYanger/kubectl-ssh/main/kubectl-ssh -o kubectl-ssh
+chmod +x kubectl-ssh
+sudo mv kubectl-ssh /usr/local/bin
+```
+
+#### Wget
+```
+wget https://raw.githubusercontent.com/BensonYanger/kubectl-ssh/main/kubectl-ssh
+chmod +x kubectl-ssh
+sudo mv kubectl-ssh /usr/local/bin
+```
+
 - To use as a script: none needed
 - To use as a kubectl plugin: place this in any directory in your PATH (probably /usr/local/bin)
 
