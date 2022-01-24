@@ -2,7 +2,11 @@
 
 Modified the kubectl-ssh plugin from jordanwilson230 updated for containerd: https://github.com/jordanwilson230/kubectl-plugins
 
-This is for clusters that use the containerd backend. This does the following:
+This is for clusters that use the containerd backend. 
+
+CRI support was added starting with [Kubernetes v1.7](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.7.md#container-runtime-interface). Docker runtime support will no longer be supported starting from [Kubernetes v1.24](https://github.com/kubernetes/kubernetes/blob/master/CHANGELOG/CHANGELOG-1.24.md#urgent-upgrade-notes) with the removal of `dockershim`.
+
+This script does the following:
 
 Creates a pod with the following:
 - image: https://hub.docker.com/repository/docker/bensonyanger/nerdctl (an alpine linux 3.15.0 image with the nerdctl binary copied)
