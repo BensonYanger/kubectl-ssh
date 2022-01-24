@@ -45,8 +45,7 @@ chmod +x kubectl-ssh
 sudo mv kubectl-ssh /usr/local/bin
 ```
 
-- To use as a script: none needed
-- To use as a kubectl plugin: place this in any directory in your PATH (probably /usr/local/bin)
+- To use this as a kubectl plugin, kubectl requires you move it to any directory on your `PATH`. Otherwise, you will need to invoke the script manually.
 
 ## Script
 - This is basically a kubectl exec but it gives you the option to choose what user you want to be 
