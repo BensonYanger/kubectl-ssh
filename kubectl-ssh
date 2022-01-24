@@ -39,7 +39,7 @@ USERNAME="root"
 CONTAINER="NONE"
 NAMESPACE="NONE"
 
-while getopts "hdp:n:u:c:s:" arg; do
+while getopts "hdp:n:u:c:" arg; do
   case $arg in
     p) # Specify pod name.
       POD=${OPTARG}
@@ -53,9 +53,6 @@ while getopts "hdp:n:u:c:s:" arg; do
       ;;
     c) # Specify container
       CONTAINER=${OPTARG}
-      ;;
-    s) # Specify shell
-      COMMAND=${OPTARG}
       ;;
     d) # Enable debug mode
       set -x
